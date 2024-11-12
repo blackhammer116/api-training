@@ -55,7 +55,6 @@ class Api_Training_APIs {
                 echo "Error occured during fetch: $err_msg";
                 return $err_msg;
             }
-            $sentiment = json_encode($response);
             $responseBody = json_decode(wp_remote_retrieve_body( $response ));
             // echo json_encode($responseBody);
             $return_stmt = "For the text: ". $responseBody->text. ". \nThe sentiment value is: ". $responseBody->sentiment. ". \nWith confidence level: ". $responseBody->confidence;
